@@ -3,9 +3,9 @@
 @name = "Johanna Jackson"
 
 # Mangle the name by reversing it or borgifying it
-def modified_name(choose)
+def modified_name(name, choose)
   # Split the name into first and last in an array
-  split_name = @name.split()
+  split_name = name.split()
 
   # Reverse the array of name components so the array is [last, first]
   reversed_name_components = split_name.reverse
@@ -14,7 +14,7 @@ def modified_name(choose)
   new_name1 = reversed_name_components.join(' ')
 
   # Store the mangled name
-  @name = new_name1
+  name = new_name1
 
   if choose
     # Split the name into last and first in an array
@@ -29,10 +29,10 @@ def modified_name(choose)
 	# Rejoin the array of name components
     new_name2 = reversed_name_components2.join(' ')
 
-    @name = new_name2
+    name = new_name2
   end
-  return @name
+  return name
 end
 
-puts "New name: #{modified_name(false)}"
-puts "New borg name: #{modified_name(true)}"
+puts "New name: #{modified_name(@name, false)}"
+puts "New borg name: #{modified_name(@name, true)}"
