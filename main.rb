@@ -16,8 +16,6 @@ def modified_name(choose)
   # Store the mangled name
   @name = new_name1
 
-  puts new_name1
-
   if choose
     # Split the name into last and first in an array
     split_name2 = new_name1.split
@@ -30,7 +28,7 @@ def modified_name(choose)
 
 	# Rejoin the array of name components
     new_name2 = reversed_name_components2.join(' ')
-    puts new_name2
+
     @name = new_name2
   end
   return @name
