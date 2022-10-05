@@ -38,25 +38,3 @@ puts "New borg name: #{modified_name(@name, true)}"
 
 puts "New name:      #{reverse_name(@name)}"
 puts "New borg name: #{borgify_name(@name)}"
-
-
-# testing pass by value vs pass by reference
-# def foo(s)
-# 	s << "foo"
-# end
-
-# def bar(s)
-# 	s = "bar"
-# end
-
-# t = 'hi'
-# foo(t)
-# puts(t)
-
-# u = 'hi'
-# foo(u.dup)
-# puts(u)
-
-# r = 'hello'
-# bar(r)
-# puts(r)
