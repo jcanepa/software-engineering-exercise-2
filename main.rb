@@ -8,7 +8,8 @@ def modified_name(name, add_borg)
   return reverse_name(name)
 end
 
-# return "First Last" as "Last First"
+# Reverse the order of a given name
+# Ex: "First Last" outputs "Last First"
 def reverse_name(name)
   # Split the name into an array containing first and last
   split_name = name.split()
@@ -18,14 +19,15 @@ def reverse_name(name)
   return reversed_name_components.join(' ')
 end
 
-# return "Some Name" as "Name Some Borg"
+# Reverses & appends "Borg" to a name,
+# Ex: "Some Name" outputs "Name Some Borg"
 def borgify_name(name)
   return reverse_name(name) + ' Borg'
 end
 
-# demonstrate the original function
+# demonstrate the original function still works
 puts "New name:      #{modified_name(@name, false)}"
 puts "New borg name: #{modified_name(@name, true)}"
-# demonstrate clean code functions (refactored original)
+# demonstrate cleaned code functions (refactored original)
 puts "New name:      #{reverse_name(@name)}"
 puts "New borg name: #{borgify_name(@name)}"
