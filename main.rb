@@ -2,9 +2,9 @@
 
 @name = "Johanna Jackson"
 
-# "Mangle" the name by reversing or borgifying it
-def mangle_name(name, add_borg)
-  return borgify_name(name) if add_borg
+# "Mangle" the name by reversing or borgifying it.
+def mangle_name(name, borgify)
+  return borgify_name(name) if borgify
   return reverse_name(name)
 end
 
