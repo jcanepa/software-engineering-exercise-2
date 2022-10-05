@@ -44,4 +44,13 @@ puts "New borg name: #{modified_name(true)}"
 
 ## Problems with original:
 
+- Hard to read
+- Function does two distinct tasks
+- Function isn't DRY
+- Function alters external program state
+
 ## Improvements:
+
+- Break up into separate function with focus, distinct jobs
+- Eliminate side effects
+- ...
