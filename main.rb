@@ -3,36 +3,60 @@
 @name = "Johanna Jackson"
 
 # Mangle the name by reversing it or borgifying it
-def modified_name(name, choose)
+def modified_name(name, add_borg)
   # Split the name into first and last in an array
   split_name = name.split()
-
   # Reverse the array of name components so the array is [last, first]
   reversed_name_components = split_name.reverse
 
-  # Rejoin the array of name components
-  new_name1 = reversed_name_components.join(' ')
-
-  # Store the mangled name
-  name = new_name1
-
-  if choose
-    # Split the name into last and first in an array
-    split_name2 = new_name1.split
-
-	# Reverse the array of name components so the array is [last, first]
-    reversed_name_components2 = split_name2.reverse
-
-	# Add borg to the end of the array
-    reversed_name_components2 << "Borg"
-
-	# Rejoin the array of name components
-    new_name2 = reversed_name_components2.join(' ')
-
-    name = new_name2
+  if add_borg
+    # Add borg to the end of the array
+    reversed_name_components << "Borg"
   end
-  return name
+
+  # Return rejoined array of name components
+  return reversed_name_components.join(' ')
 end
 
-puts "New name: #{modified_name(@name, false)}"
+# return "First Last" as "Last First"
+def reverse_name(name)
+  # Split the name into first and last in an array
+  split_name = name.split()
+  # Reverse the array of name components so the array is [last, first]
+  reversed_name_components = split_name.reverse
+  # Return rejoined array of name components
+  return reversed_name_components.join(' ')
+end
+
+# return "Some Name" as "Name Some Borg"
+def borgify_name(name)
+  return reverse_name(name) + ' Borg'
+end
+
+puts "New name:      #{modified_name(@name, false)}"
 puts "New borg name: #{modified_name(@name, true)}"
+
+puts "New name:      #{reverse_name(@name)}"
+puts "New borg name: #{borgify_name(@name)}"
+
+
+# testing pass by value vs pass by reference
+# def foo(s)
+# 	s << "foo"
+# end
+
+# def bar(s)
+# 	s = "bar"
+# end
+
+# t = 'hi'
+# foo(t)
+# puts(t)
+
+# u = 'hi'
+# foo(u.dup)
+# puts(u)
+
+# r = 'hello'
+# bar(r)
+# puts(r)
