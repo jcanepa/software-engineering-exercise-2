@@ -1,11 +1,5 @@
 # Name Mangler
 
-# "Mangle" the name by reversing or borgifying it.
-def modified_name(name, borgify)
-  return borgify_name(name) if borgify
-  return reverse_name(name)
-end
-
 # Reverse the order of parts of a given name.
 # Ex: "First Last" outputs "Last First"
 def reverse_name(name)
@@ -21,6 +15,12 @@ end
 # Ex: "Some Name" outputs "Name Some Borg"
 def borgify_name(name)
   return reverse_name(name) + ' Borg'
+end
+
+# "Mangle" the name by reversing or borgifying it.
+def modified_name(name, borgify)
+  return borgify_name(name) if borgify
+  return reverse_name(name)
 end
 
 @name = "Johanna Jackson"
