@@ -1,23 +1,23 @@
 # Name Mangler
 
-# Reverse the order of parts of a given name.
-# Ex: "First Last" outputs "Last First"
+# Reverse a given name.
+# Ex: "First Last" returns "Last First"
 def reverse_name(name)
-  # Split name into an array containing its parts
+  # array of name parts, ex: [first, last]
   split_name = name.split()
-  # Reverse order of name parts so array is [last, first]
+  # reverse name parts, ex: [last, first]
   reversed_name_components = split_name.reverse
-  # Join name parts into a string separated by spaces
+  # Join name parts into string separated by space(s), ex: "last first"
   return reversed_name_components.join(' ')
 end
 
-# Reverses & appends "Borg" to a given name.
-# Ex: "Some Name" outputs "Name Some Borg"
+# Reverse & append "Borg" to a given name.
+# Ex: "Some Name" returns "Name Some Borg"
 def borgify_name(name)
   return reverse_name(name) + ' Borg'
 end
 
-# "Mangle" the name by reversing or borgifying it.
+# "Mangle" a given name by manipulating it.
 def modified_name(name, borgify)
   return borgify_name(name) if borgify
   return reverse_name(name)
@@ -25,9 +25,9 @@ end
 
 @name = "Johanna Jackson"
 
-# Demo the original function still works!
+# Demo original function still works:
 puts "New name:      #{modified_name(@name, false)}"
 puts "New borg name: #{modified_name(@name, true)}"
-# Demo single responsibility functions
+# Demo clean, single responsibility functions:
 puts "New name:      #{reverse_name(@name)}"
 puts "New borg name: #{borgify_name(@name)}"
